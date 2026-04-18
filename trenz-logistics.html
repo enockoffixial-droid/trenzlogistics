@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trenz Logistics | Professional Furniture Removal</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0f2044;
+    --navy-mid: #1a3460;
+    --navy-light: #e8edf5;
+    --gold: #c8a84b;
+    --gold-light: #f5edda;
+    --gold-dark: #a8882e;
+    --white: #ffffff;
+    --off-white: #f9f8f5;
+    --text: #1a1a2e;
+    --text-muted: #5a6070;
+    --border: #e2e5ec;
+    --radius: 10px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-decoration: none;
+  }
+
+  .logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none;
+    font-size: 0.9rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--navy); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-dark) !important; color: var(--white) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    display: flex; align-items: center;
+    padding: 100px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,168,75,0.15);
+  }
+
+  #hero::after {
+    content: '';
+    position: absolute; bottom: -150px; right: 100px;
+    width: 350px; height: 350px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,168,75,0.1);
+  }
+
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(200,168,75,0.15);
+    border: 1px solid rgba(200,168,75,0.3);
+    color: var(--gold);
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em;
+    padding: 0.4rem 1rem; border-radius: 50px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    color: var(--white);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+  }
+
+  .hero-content h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-content p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-buttons {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.3);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
+
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .hero-stat h3 {
+    font-size: 1.9rem; color: var(--gold);
+    font-weight: 700; font-family: 'Playfair Display', serif;
+  }
+
+  .hero-stat p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0; font-weight: 400;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-card h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .quick-check {
+    display: flex; flex-direction: column; gap: 0.85rem;
+  }
+
+  .check-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    color: rgba(255,255,255,0.75);
+    font-size: 0.9rem; font-weight: 300;
+  }
+
+  .check-icon {
+    width: 28px; height: 28px; min-width: 28px;
+    background: rgba(200,168,75,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    font-size: 0.75rem;
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 90px 5%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 520px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--off-white); }
+
+  .services-header { margin-bottom: 3.5rem; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 8px 32px rgba(15,32,68,0.08);
+    transform: translateY(-3px);
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .service-card:hover::after { opacity: 1; }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--gold-light);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.4rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .service-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .service-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 1.25rem;
+    color: var(--gold-dark);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+
+  .service-link:hover { gap: 0.7rem; }
+
+  /* ── WHY CHOOSE US ── */
+  #why {
+    background: var(--white);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .why-features {
+    display: flex; flex-direction: column; gap: 1.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .why-feature {
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+
+  .feature-num {
+    width: 40px; height: 40px; min-width: 40px;
+    background: var(--navy);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .feature-text h4 {
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+  }
+
+  .feature-text p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .why-visual {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 2.5rem;
+    color: var(--white);
+  }
+
+  .why-visual h3 {
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 1.75rem;
+  }
+
+  .why-rating {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; }
+
+  .rating-text {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+  }
+
+  .why-quote {
+    border-left: 2px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .why-quote p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .why-author {
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+
+  .author-avatar {
+    width: 36px; height: 36px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+
+  .author-info p { margin: 0; }
+  .author-name { font-size: 0.85rem; font-weight: 500; color: var(--white); }
+  .author-loc { font-size: 0.75rem; color: rgba(255,255,255,0.5); font-weight: 300; }
+
+  /* ── BANNER ── */
+  #banner {
+    background: var(--navy);
+    padding: 70px 5%;
+  }
+
+  .banner-inner {
+    max-width: 1100px; margin: 0 auto;
+    text-align: center;
+  }
+
+  .banner-inner h2 {
+    color: var(--white);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+
+  .banner-inner h2 strong {
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .banner-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .banner-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(200,168,75,0.2);
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: background 0.2s;
+  }
+
+  .banner-card:hover {
+    background: rgba(200,168,75,0.08);
+  }
+
+  .banner-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 1.1rem;
+  }
+
+  .banner-icon-wrap {
+    width: 60px; height: 60px;
+    background: rgba(200,168,75,0.12);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.6rem;
+  }
+
+  .banner-card h3 {
+    color: var(--white);
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+  }
+
+  .banner-card p {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* ── HOW IT WORKS ── */
+  #process { background: var(--off-white); }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  .process-grid::before {
+    content: '';
+    position: absolute;
+    top: 36px; left: 10%;
+    width: 80%;
+    height: 1px;
+    background: var(--border);
+    z-index: 0;
+  }
+
+  .process-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num {
+    width: 72px; height: 72px;
+    background: var(--white);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.25rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .process-step h4 {
+    font-size: 0.95rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+  }
+
+  .process-step p {
+    color: var(--text-muted);
+    font-size: 0.83rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── COVERAGE ── */
+  #coverage { background: var(--white); }
+
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 2.5rem;
+  }
+
+  .route-list {
+    display: flex; flex-direction: column; gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .route-item {
+    display: flex; align-items: center;
+    padding: 1.1rem 1.25rem;
+    background: var(--off-white);
+    border-radius: 10px;
+    gap: 1rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  .route-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    min-width: 10px;
+  }
+
+  .route-text {
+    font-size: 0.9rem;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .route-dist {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .coverage-cta {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .coverage-cta h3 {
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .coverage-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    margin-bottom: 1.75rem;
+    font-weight: 300;
+  }
+
+  /* ── CTA SECTION ── */
+  #cta {
+    background: var(--gold-light);
+    border-top: 1px solid #e8d9a8;
+    padding: 90px 5%;
+  }
+
+  .cta-inner {
+    max-width: 680px; margin: 0 auto; text-align: center;
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .cta-inner p {
+    color: var(--text-muted);
+    margin-bottom: 2.25rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-wa {
+    background: #25D366;
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
+
+  .wa-icon {
+    width: 22px; height: 22px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 50px 5% 30px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand .logo { font-size: 1.3rem; display: block; margin-bottom: 0.75rem; }
+
+  .footer-brand p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .footer-col h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  /* ── WHATSAPP FLOAT ── */
+  .wa-float {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    background: #25D366;
+    color: var(--white);
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+    z-index: 200;
+    transition: all 0.2s;
+  }
+
+  .wa-float:hover { transform: scale(1.08); }
+
+  .wa-float svg { width: 28px; height: 28px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-card { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .banner-cards { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .process-grid::before { display: none; }
+    .coverage-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" href="https://wa.me/27XXXXXXXXX?text=Hi%20Trenz%20Logistics!%20I'd%20like%20to%20get%20a%20free%20quote%20for%20my%20move." target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="logo">Trenz<span>.</span>Logistics</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#coverage">Coverage</a></li>
+    <li><a href="https://wa.me/27XXXXXXXXX?text=Hi%20Trenz%20Logistics!%20I'd%20like%20a%20free%20quote." target="_blank" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Durban · Johannesburg · Cape Town</div>
+      <h1>Move Smarter.<br>Move with <em>Confidence.</em></h1>
+      <p>Professional furniture removal across South Africa. We handle your belongings with the care they deserve — on time, every time.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/27XXXXXXXXX?text=Hi%20Trenz%20Logistics!%20I'd%20like%20a%20free%20quote%20for%20my%20move." target="_blank" class="btn-primary">
+          Get a Free Quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#services" class="btn-secondary">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <h3>500+</h3>
+          <p>Moves Completed</p>
+        </div>
+        <div class="hero-stat">
+          <h3>3</h3>
+          <p>Major Corridors</p>
+        </div>
+        <div class="hero-stat">
+          <h3>100%</h3>
+          <p>Insured Moves</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>What we cover</h3>
+      <div class="quick-check">
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          Packing & unpacking assistance
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          Short and long distance removals
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          Secure short & long-term storage
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          Fragile item handling
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          Fully insured loads
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          Real-time WhatsApp updates
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-header">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Tailored Removal Services</h2>
+      <p class="section-sub">Whether you're moving across town or across the country, we have the right solution for you.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Local Moves</h3>
+        <p>Fast, efficient furniture removal within your city or surrounding area. Our local teams know every route and are ready to move you in a single day.</p>
+        <a href="https://wa.me/27XXXXXXXXX?text=Hi!%20I%20need%20a%20quote%20for%20a%20local%20move." target="_blank" class="service-link">
+          Get a local quote →
+        </a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚛</div>
+        <h3>Long Distance Moves</h3>
+        <p>Seamless door-to-door removal between Durban, Johannesburg, and Cape Town. Scheduled departures, GPS tracking, and real-time updates throughout.</p>
+        <a href="https://wa.me/27XXXXXXXXX?text=Hi!%20I%20need%20a%20quote%20for%20a%20long%20distance%20move." target="_blank" class="service-link">
+          Plan your long move →
+        </a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>Storage Solutions</h3>
+        <p>Secure, climate-considerate storage facilities for short or long-term needs. Perfect for in-between moves, renovations, or decluttering projects.</p>
+        <a href="https://wa.me/27XXXXXXXXX?text=Hi!%20I%20need%20information%20about%20storage%20options." target="_blank" class="service-link">
+          Enquire about storage →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <p class="section-label">Why Choose Us</p>
+        <h2 class="section-title">Your Move Deserves Expert Hands</h2>
+        <p class="section-sub">We've built our reputation one careful move at a time. Here's what makes Trenz Logistics different.</p>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="feature-num">01</div>
+            <div class="feature-text">
+              <h4>Trained & Vetted Teams</h4>
+              <p>Every crew member is trained, background-checked, and experienced in handling furniture of all kinds safely.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="feature-num">02</div>
+            <div class="feature-text">
+              <h4>Transparent Pricing</h4>
+              <p>No hidden fees. You receive a clear quote upfront — what we quote is what you pay.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="feature-num">03</div>
+            <div class="feature-text">
+              <h4>Fully Insured</h4>
+              <p>Your belongings are covered in transit. We take responsibility so you can move with complete peace of mind.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="feature-num">04</div>
+            <div class="feature-text">
+              <h4>Real-Time Communication</h4>
+              <p>WhatsApp updates from pickup to delivery. You always know exactly where your belongings are.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual">
+        <h3>What our clients say</h3>
+        <div class="why-rating">
+          <div class="stars">★★★★★</div>
+          <span class="rating-text">5.0 · Verified Client</span>
+        </div>
+        <div class="why-quote">
+          <p>"Trenz Logistics made our move from Johannesburg to Cape Town completely stress-free. The team was professional, on time, and communicated every step of the way. Highly recommend."</p>
+        </div>
+        <div class="why-author">
+          <div class="author-avatar">NK</div>
+          <div class="author-info">
+            <p class="author-name">Nomsa K.</p>
+            <p class="author-loc">Johannesburg → Cape Town</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER: Save Time | Save Money | Reliability -->
+<section id="banner">
+  <div class="banner-inner">
+    <h2>Everything you need from a removal company — <strong>guaranteed.</strong></h2>
+    <div class="banner-cards">
+      <div class="banner-card">
+        <div class="banner-badge">Save Time</div>
+        <div class="banner-icon-wrap">⏱</div>
+        <h3>Efficient Scheduling</h3>
+        <p>We arrive on time, work fast, and have you settled sooner. No wasted hours waiting around.</p>
+      </div>
+      <div class="banner-card">
+        <div class="banner-badge">Save Money</div>
+        <div class="banner-icon-wrap">💰</div>
+        <h3>Competitive Rates</h3>
+        <p>Fair, transparent pricing with no surprises. Get more value from every rand you spend on your move.</p>
+      </div>
+      <div class="banner-card">
+        <div class="banner-badge">Reliability</div>
+        <div class="banner-icon-wrap">🔒</div>
+        <h3>Dependable Every Time</h3>
+        <p>We show up, we deliver, and we keep you informed. Our track record speaks for itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="process">
+  <div class="section-inner">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Moving Made Simple</h2>
+    <p class="section-sub">From your first message to your last box unpacked — four easy steps.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h4>Get in Touch</h4>
+        <p>WhatsApp or call us. Tell us where you're moving from, to, and when.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4>Receive Your Quote</h4>
+        <p>We assess your needs and send you a clear, competitive quote within hours.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h4>We Collect & Move</h4>
+        <p>Our team arrives on schedule, loads safely, and transports your belongings.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h4>Delivered & Done</h4>
+        <p>We deliver to your new address and confirm everything arrived in perfect condition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section id="coverage">
+  <div class="section-inner">
+    <p class="section-label">Our Coverage</p>
+    <h2 class="section-title">Moving Across South Africa</h2>
+    <div class="coverage-grid">
+      <div>
+        <p class="section-sub">We specialise in the key furniture removal corridors connecting South Africa's major cities — servicing thousands of kilometres with consistency.</p>
+        <div class="route-list">
+          <div class="route-item">
+            <div class="route-dot"></div>
+            <span class="route-text">Durban ↔ Johannesburg</span>
+            <span class="route-dist">±564 km</span>
+          </div>
+          <div class="route-item">
+            <div class="route-dot"></div>
+            <span class="route-text">Johannesburg ↔ Cape Town</span>
+            <span class="route-dist">±1,400 km</span>
+          </div>
+          <div class="route-item">
+            <div class="route-dot"></div>
+            <span class="route-text">Durban ↔ Cape Town</span>
+            <span class="route-dist">±1,750 km</span>
+          </div>
+          <div class="route-item">
+            <div class="route-dot"></div>
+            <span class="route-text">Local moves (all cities)</span>
+            <span class="route-dist">Same-day</span>
+          </div>
+        </div>
+      </div>
+      <div class="coverage-cta">
+        <h3>Not sure about your route?</h3>
+        <p>Tell us your pickup and delivery points and we'll give you a tailored quote — usually within the hour.</p>
+        <a href="https://wa.me/27XXXXXXXXX?text=Hi%20Trenz!%20I%20need%20a%20quote%20for%20a%20move." target="_blank" class="btn-primary" style="display:inline-flex; justify-content:center;">
+          WhatsApp Us Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner">
+    <p class="section-label" style="text-align:center;">Ready to Move?</p>
+    <h2>Let's Get You Moving Today</h2>
+    <p>Contact us on WhatsApp for a free, no-obligation quote. Fast response. Friendly service. Professional move.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/27XXXXXXXXX?text=Hi%20Trenz%20Logistics!%20I'd%20like%20a%20free%20quote%20for%20my%20upcoming%20move." target="_blank" class="btn-wa">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Chat on WhatsApp
+      </a>
+      <a href="tel:+27XXXXXXXXX" class="btn-primary" style="background: var(--navy); color: var(--white);">
+        Call Us Directly
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">Trenz<span>.</span>Logistics</a>
+        <p>Professional furniture removal across South Africa's major corridors. Licensed, insured, and built on reliability.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Local Moves</a></li>
+          <li><a href="#services">Long Distance Moves</a></li>
+          <li><a href="#services">Storage Solutions</a></li>
+          <li><a href="#coverage">Our Coverage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="https://wa.me/27XXXXXXXXX" target="_blank">WhatsApp Us</a></li>
+          <li><a href="tel:+27XXXXXXXXX">Call Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Trenz Logistics. All rights reserved.</p>
+      <p>Built with care · <a href="https://wa.me/27XXXXXXXXX" target="_blank">WhatsApp Us</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
